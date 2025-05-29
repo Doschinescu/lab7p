@@ -1,7 +1,10 @@
 fastapi
 uvicorn
+PyJWT
 python-jose[cryptography]
 passlib[bcrypt]
 pydantic
 pymongo
 motor
+python-dotenv
+
