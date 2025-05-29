@@ -4,7 +4,7 @@ import os
 
 JWT_SECRET = os.getenv("JWT_SECRET")
 JWT_ALGORITHM = os.getenv("JWT_ALGORITHM")
-JWT_EXPIRE_MINUTES = int(os.getenv("JWT_EXPIRE_MINUTES"))
+JWT_EXPIRE_MINUTES = int(os.getenv("JWT_EXPIRE_MINUTES", "60"))
 
 def create_token(data: dict):
     to_encode = data.copy()
