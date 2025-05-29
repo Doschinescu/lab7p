@@ -9,22 +9,20 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# ✅ CORS Configuration
+# ✅ CORRECT origin format: No path, just scheme + host + port
 origins = [
-    "http://localhost:5173/Lab6/",  # Frontend development server
+    "http://localhost:5173",  # Local dev frontend
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # Use ["*"] to allow all origins (less secure)
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ✅ Include your API routes
 app.include_router(router)
 
-# ✅ Run the app
 if __name__ == "__main__":
     uvicorn.run("main:app", port=8000, reload=True)
