@@ -1,0 +1,36 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "Workout API", "version": "1.0.0" },
+  "paths": {
+    "/workouts": {
+      "get": {
+        "summary": "Get all workouts",
+        "parameters": [
+          { "name": "skip", "in": "query", "schema": { "type": "integer" } },
+          { "name": "limit", "in": "query", "schema": { "type": "integer" } }
+        ],
+        "responses": { "200": { "description": "List workouts" } }
+      },
+      "post": {
+        "summary": "Create workout",
+        "responses": { "201": { "description": "Created" } }
+      }
+    },
+    "/workouts/{id}": {
+      "put": {
+        "summary": "Update workout",
+        "responses": { "200": { "description": "Updated" } }
+      },
+      "delete": {
+        "summary": "Delete workout",
+        "responses": { "204": { "description": "Deleted" } }
+      }
+    },
+    "/token": {
+      "post": {
+        "summary": "Generate JWT",
+        "responses": { "200": { "description": "JWT issued" } }
+      }
+    }
+  }
+}
